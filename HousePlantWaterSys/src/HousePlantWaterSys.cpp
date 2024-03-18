@@ -35,6 +35,7 @@ unsigned int waterTime = 500;
 int subValue;
 String message;
 bool watering = false;
+String dateTime, currentTime;
 
 Adafruit_BME280 bme;
 AirQualitySensor aqSensor(AQPIN);
@@ -63,10 +64,14 @@ bool MQTT_ping();
 void getConc() ;
 
 // Let Device OS manage the connection to the Particle Cloud
-SYSTEM_MODE(SEMI_AUTOMATIC);
+SYSTEM_MODE(AUTOMATIC);
 SYSTEM_THREAD(ENABLED);
 
 void setup() {
+    // sync time
+    Time.zone(-4);
+    Particle.syncTime();
+
     // Initialize Serial port for dubugging purposes
     Serial.begin(9600);
     waitFor(Serial.isConnected, 10000);
@@ -96,7 +101,7 @@ void setup() {
 
     // Initialize Dust
     pinMode(DUSTPIN, INPUT);
-   // new Thread("concThread", getConc);
+    new Thread("concThread", getConc);
 
     // Initialize OLED
      display.begin(SSD1306_SWITCHCAPVCC, OLEDADDR);
@@ -202,6 +207,13 @@ void loop() {
             tempFeed.publish(temperature);
             moistureFeed.publish(soilMoisture);
         }       
+        dateTime = Time.timeStr();
+        Serial.printf("dateTime is %s\n", dateTime.c_str());
+        currentTime = dateTime.substring(11, 19);
+        Serial.printf("time is: %s\n\n", currentTime.c_str());
+        display.printf("Time: %s", currentTime.c_str());
+        display.display();
+        
        lastTime = millis();
     } 
  }
