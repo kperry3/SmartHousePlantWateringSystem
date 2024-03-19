@@ -21,7 +21,6 @@ const int DUSTPIN = D3;
 const int RELAYPIN = D4;
 const int OLEDADDR = 0x3C;
 const int OLEDRESET = -1;
-const int BUTTONPIN = D12;
 
 // Declare variables
 float temperature, humidity, soilMoisture;
@@ -68,6 +67,11 @@ SYSTEM_MODE(AUTOMATIC);
 SYSTEM_THREAD(ENABLED);
 
 void setup() {
+
+    // Initialize Relay
+    pinMode(RELAYPIN, OUTPUT);
+    digitalWrite(RELAYPIN, LOW); // Make sure pump is off
+    
     // sync time
     Time.zone(-4);
     Particle.syncTime();
@@ -76,9 +80,6 @@ void setup() {
     Serial.begin(9600);
     waitFor(Serial.isConnected, 10000);
 
-    // Initialize Relay
-    pinMode(RELAYPIN, OUTPUT);
-    digitalWrite(RELAYPIN, LOW); // Make sure pump is off
 
     // Connect to the internet
     WiFi.on();
@@ -106,10 +107,6 @@ void setup() {
     // Initialize OLED
      display.begin(SSD1306_SWITCHCAPVCC, OLEDADDR);
      display.clearDisplay();   
-
-     // Initialize button
-     pinMode(BUTTONPIN, INPUT);
-
 
     // Setup MQTT subscription
     mqtt.subscribe(&manualFeed);
@@ -213,7 +210,7 @@ void loop() {
         Serial.printf("time is: %s\n\n", currentTime.c_str());
         display.printf("Time: %s", currentTime.c_str());
         display.display();
-        
+
        lastTime = millis();
     } 
  }
