@@ -1,100 +1,71 @@
-# HousePlantWaterSys
-
-This firmware project was created using [Particle Developer Tools](https://www.particle.io/developer-tools/) and is compatible with all [Particle Devices](https://www.particle.io/devices/).
-
-Feel free to replace this README.md file with your own content, or keep it for reference.
+# Houseplant Monitoring and Water System  
+<img src="images/Houseplant_Watering _system.jpg" width=500 height=450>
 
 ## Table of Contents
 - [Introduction](#introduction)
 - [Prerequisites To Use This Template](#prerequisites-to-use-this-repository)
-- [Getting Started](#getting-started)
-- [Particle Firmware At A Glance](#particle-firmware-at-a-glance)
-  - [Logging](#logging)
-  - [Setup and Loop](#setup-and-loop)
-  - [Delays and Timing](#delays-and-timing)
-  - [Testing and Debugging](#testing-and-debugging)
-  - [GitHub Actions (CI/CD)](#github-actions-cicd)
-  - [OTA](#ota)
+- [Getting Started](#getting-started) 
+- [Auto Cad Design](#Auto-Cad-Design) 
+- [Schematic](#Schematic)
 - [Support and Feedback](#support-and-feedback)
 - [Version](#version)
 
 ## Introduction
 
-For an in-depth understanding of this project template, please refer to our [documentation](https://docs.particle.io/firmware/best-practices/firmware-template/).
+In today's fast-paced world, it's no secret that life can get incredibly busy. With so many tasks and responsibilities demanding our attention, it's easy for important duties to slip through the cracks. Take, for instance, the simple act of watering our houseplants. Amidst the hustle and bustle of modern life, it's all too common for this essential task to be forgotten or pushed aside.
+
+Recognizing this common dilemma, our team embarked on an innovative project during the Deepdive IoT prototyping and rapid development bootcamp. Our goal? To create a solution that would ensure our houseplants receive the care they need, even in the midst of our hectic schedules. Thus, the concept of a smart houseplant watering system was born.
+
+But we didn't stop there. Understanding that successful plant care goes beyond watering alone, we envisioned a comprehensive solution that would monitor and optimize environmental conditions for our green companions. By integrating sensors to track parameters such as temperature, humidity, air quality, soil moisture, and dust levels, our system provides a holistic approach to plant health management.
+
+Through advanced data logging and analysis capabilities, our smart houseplant watering system not only automates watering routines but also empowers users with valuable insights into their indoor environment. With real-time monitoring and customizable alerts, users can stay informed about the conditions affecting their plants and make informed decisions to ensure optimal growth and vitality.
+
+Stay tuned as we delve deeper into the development process, uncovering the intricacies of our smart houseplant watering system and the innovative technologies driving its functionality. With our project, we aim to not only simplify our daily lives but also contribute to the advancement of IoT technology in the realm of home gardening, revolutionizing the way we care for our indoor greenery.I
+The Houseplant Watering system will monitor environmental date of temperature, air quality, humidity, dust levels and moisture levels of the soil and log the data to adafruit.  Adafruit also has a button on a dashboard to allow the user to water their plant manually. Zapier has been integrated to send an SMS text to the user to inform them that the soil is too dry.
 
 ## Prerequisites To Use This Repository
 
-To use this software/firmware on a device, you'll need:
+To use this software you'll need:
 
-- A [Particle Device](https://www.particle.io/devices/).
-- Windows/Mac/Linux for building the software and flashing it to a device.
-- [Particle Development Tools](https://docs.particle.io/getting-started/developer-tools/developer-tools/) installed and set up on your computer.
-- Optionally, a nice cup of tea (and perhaps a biscuit).
+* Particle Photon 2
+* Adafruit OLED Display
+* Grove Seeed Dust Sensor
+* Grove Seeed Air Quality Sensor
+* Capacitive Soil Moisture Sensor
+* Relay/Optocoupler
+* Water pump/hose
+* A Plant in a pot
+* Cup for water
+* An Adafruit account with feeds for each sensor and a dashboard with a button
+
 
 ## Getting Started
 
-1. While not essential, we recommend running the [device setup process](https://setup.particle.io/) on your Particle device first. This ensures your device's firmware is up-to-date and you have a solid baseline to start from.
+1. Build the ciruit.
 
-2. If you haven't already, open this project in Visual Studio Code (File -> Open Folder). Then [compile and flash](https://docs.particle.io/getting-started/developer-tools/workbench/#cloud-build-and-flash) your device. Ensure your device's USB port is connected to your computer.
+2. While not essential, it is recommend running the [device setup process](https://setup.particle.io/) on your Particle device first. This ensures your device's firmware is up-to-date and you have a solid baseline to start from.
 
-3. Verify the device's operation by monitoring its logging output:
+3. If you haven't already, open this project in Visual Studio Code (File -> Open Folder). Then [compile and flash](https://docs.particle.io/getting-started/developer-tools/workbench/#cloud-build-and-flash) your device. Ensure your device's USB port is connected to your computer.
+
+4. Verify the device's operation by monitoring its logging output:
     - In Visual Studio Code with the Particle Plugin, open the [command palette](https://docs.particle.io/getting-started/developer-tools/workbench/#particle-commands) and choose "Particle: Serial Monitor".
     - Or, using the Particle CLI, execute:
     ```
     particle serial monitor --follow
     ```
 
-4. Uncomment the code at the bottom of the cpp file in your src directory to publish to the Particle Cloud! Login to console.particle.io to view your devices events in real time.
 
-5. Customize this project! For firmware details, see [Particle firmware](https://docs.particle.io/reference/device-os/api/introduction/getting-started/). For information on the project's directory structure, visit [this link](https://docs.particle.io/firmware/best-practices/firmware-template/#project-overview).
+## Auto Cad Design
+3D model of the flower pot
 
-## Particle Firmware At A Glance
+<img src="images/flower_pot.gif" width=500 height=350>
 
-### Logging
+## Schematic
+<img src="images/schematic.png" width=500 height=450>
 
-The firmware includes a [logging library](https://docs.particle.io/reference/device-os/api/logging/logger-class/). You can display messages at different levels and filter them:
-
-```
-Log.trace("This is trace message");
-Log.info("This is info message");
-Log.warn("This is warn message");
-Log.error("This is error message");
-```
-
-### Setup and Loop
-
-Particle projects originate from the Wiring/Processing framework, which is based on C++. Typically, one-time setup functions are placed in `setup()`, and the main application runs from the `loop()` function.
-
-For advanced scenarios, explore our [threading support](https://docs.particle.io/firmware/software-design/threading-explainer/).
-
-### Delays and Timing
-
-By default, the setup() and loop() functions are blocking whilst they run, meaning that if you put in a delay, your entire application will wait for that delay to finish before anything else can run. 
-
-For techniques that allow you to run multiple tasks in parallel without creating threads, checkout the code example [here](https://docs.particle.io/firmware/best-practices/firmware-template/).
-
-(Note: Although using `delay()` isn't recommended for best practices, it's acceptable for testing.)
-
-### Testing and Debugging
-
-For firmware testing and debugging guidance, check [this documentation](https://docs.particle.io/troubleshooting/guides/build-tools-troubleshooting/debugging-firmware-builds/).
-
-### GitHub Actions (CI/CD)
-
-This project provides a YAML file for GitHub, automating firmware compilation whenever changes are pushed. More details on [Particle GitHub Actions](https://docs.particle.io/firmware/best-practices/github-actions/) are available.
-
-### OTA
-
-To learn how to utilize Particle's OTA service for device updates, consult [this documentation](https://docs.particle.io/getting-started/cloud/ota-updates/).
-
-Test OTA with the 'Particle: Cloud Flash' command in Visual Studio Code or the CLI command 'particle flash'!
-
-This firmware supports binary assets in OTA packages, allowing the inclusion of audio, images, configurations, and external microcontroller firmware. More details are [here](https://docs.particle.io/reference/device-os/api/asset-ota/asset-ota/).
-
-## Support and Feedback
-
-For support or feedback on this template or any Particle products, please join our [community](https://community.particle.io)!
+## Fitzing Diagram
+<img src="images/fritzing.png" width=500 height=450>
 
 ## Version
 
-Template version 1.0.2
+Template version 1.0.0
