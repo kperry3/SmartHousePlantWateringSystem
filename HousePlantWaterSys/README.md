@@ -7,7 +7,10 @@
 - [Getting Started](#getting-started) 
 - [Auto Cad Design](#Auto-Cad-Design) 
 - [Schematic](#Schematic)
-- [Support and Feedback](#support-and-feedback)
+- [Fritzing Diagram](#Fitzing-Diagram)
+- [About Me](#About-Me)
+  - [Background](#Background)
+  - [Interests](#Interests)
 - [Version](#version)
 
 ## Introduction
@@ -65,6 +68,16 @@ To use this software you'll need:
 
 ## Fitzing Diagram
 <img src="images/fritzing.png" width=500 height=450>
+
+## About Me
+
+I'm Kathrynn Perry, a software developer with a passion for IoT projects. I specialize in leveraging technology to create innovative solutions that make a difference in people's lives.
+
+### Background
+With a background in software development, I've honed my skills in creating efficient and effective software solutions. My journey in the tech world has led me to explore the fascinating realm of Internet of Things (IoT) projects, where I thrive on combining my programming expertise with my love for problem-solving.
+
+### Interests
+Beyond the digital realm, I have a deep-rooted interest in plants and gardening. There's something magical about nurturing greenery and watching it flourish, which is why I'm particularly drawn to projects that integrate technology with plant care.
 
 ## Version
 
