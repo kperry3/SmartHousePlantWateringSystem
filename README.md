@@ -1,5 +1,5 @@
 # Houseplant Monitoring and Water System  
-<img src="HousPlantWaterSys/images/Houseplant_Watering _system.jpg" width=500 height=450>
+<img src="HousePlantWaterSys/images/Houseplant_Watering _system.jpg" width=500 height=450>
 
 ## Table of Contents
 - [Introduction](#introduction)
