@@ -1,5 +1,5 @@
 # Houseplant Monitoring and Water System  
-<img src="images/Houseplant_Watering _system.jpg" width=500 height=450>
+<img src="HousPlantWaterSys/images/Houseplant_Watering _system.jpg" width=500 height=450>
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -23,8 +23,9 @@ But we didn't stop there. Understanding that successful plant care goes beyond w
 
 Through advanced data logging and analysis capabilities, our smart houseplant watering system not only automates watering routines but also empowers users with valuable insights into their indoor environment. With real-time monitoring and customizable alerts, users can stay informed about the conditions affecting their plants and make informed decisions to ensure optimal growth and vitality.
 
-Stay tuned as we delve deeper into the development process, uncovering the intricacies of our smart houseplant watering system and the innovative technologies driving its functionality. With our project, we aim to not only simplify our daily lives but also contribute to the advancement of IoT technology in the realm of home gardening, revolutionizing the way we care for our indoor greenery.I
-The Houseplant Watering system will monitor environmental date of temperature, air quality, humidity, dust levels and moisture levels of the soil and log the data to adafruit.  Adafruit also has a button on a dashboard to allow the user to water their plant manually. Zapier has been integrated to send an SMS text to the user to inform them that the soil is too dry.
+Stay tuned as we delve deeper into the development process, uncovering the intricacies of our smart houseplant watering system and the innovative technologies driving its functionality. With our project, we aim to not only simplify our daily lives but also contribute to the advancement of IoT technology in the realm of home gardening, revolutionizing the way we care for our indoor greenery.
+
+The Houseplant Watering system will monitor environmental data of temperature, air quality, humidity, dust levels, and moisture levels of the soil and log the data to Adafruit.  Adafruit also has a button on a dashboard to allow the user to water their plant manually. Zapier has been integrated to send an SMS text to the user to inform them that the soil is too dry.
 
 ## Prerequisites To Use This Repository
 
@@ -44,9 +45,9 @@ To use this software you'll need:
 
 ## Getting Started
 
-1. Build the ciruit.
+1. Build the circuit.
 
-2. While not essential, it is recommend running the [device setup process](https://setup.particle.io/) on your Particle device first. This ensures your device's firmware is up-to-date and you have a solid baseline to start from.
+2. While not essential, it is recommended running the [device setup process](https://setup.particle.io/) on your Particle device first. This ensures your device's firmware is up-to-date and you have a solid baseline to start from.
 
 3. If you haven't already, open this project in Visual Studio Code (File -> Open Folder). Then [compile and flash](https://docs.particle.io/getting-started/developer-tools/workbench/#cloud-build-and-flash) your device. Ensure your device's USB port is connected to your computer.
 
@@ -61,17 +62,17 @@ To use this software you'll need:
 ## Auto Cad Design
 3D model of the flower pot
 
-<img src="images/flower_pot.gif" width=500 height=350>
+<img src="HousePlantWaterSys/images/flower_pot.gif" width=500 height=350>
 
 ## Schematic
-<img src="images/schematic.png" width=500 height=450>
+<img src="HousePlantWaterSys/images/schematic.png" width=500 height=450>
 
 ## Fitzing Diagram
-<img src="images/fritzing.png" width=500 height=450>
+<img src="HousePlantWaterSys/images/fritzing.png" width=500 height=450>
 
 ## About Me
 
-I'm Kathryn Perry, a software developer with a passion for IoT projects. I specialize in leveraging technology to create innovative solutions that make a difference in people's lives. Check out my hackster link [https://www.hackster.io/bytecodeperry](https://www.hackster.io/bytecodeperry)
+I'm Kathryn Perry, a software developer with a passion for IoT projects. I specialize in leveraging technology to create innovative solutions that make a difference in people's lives. Check out my Hackster [https://www.hackster.io/bytecodeperry](https://www.hackster.io/bytecodeperry)
 
 ### Background
 With a background in software development, I've honed my skills in creating efficient and effective software solutions. My journey in the tech world has led me to explore the fascinating realm of Internet of Things (IoT) projects, where I thrive on combining my programming expertise with my love for problem-solving.
