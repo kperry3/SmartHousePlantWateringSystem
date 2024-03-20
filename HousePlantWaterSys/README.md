@@ -71,7 +71,7 @@ To use this software you'll need:
 
 ## About Me
 
-I'm Kathrynn Perry, a software developer with a passion for IoT projects. I specialize in leveraging technology to create innovative solutions that make a difference in people's lives.
+I'm Kathryn Perry, a software developer with a passion for IoT projects. I specialize in leveraging technology to create innovative solutions that make a difference in people's lives. Check out my hackster link [https://www.hackster.io/bytecodeperry](https://www.hackster.io/bytecodeperry)
 
 ### Background
 With a background in software development, I've honed my skills in creating efficient and effective software solutions. My journey in the tech world has led me to explore the fascinating realm of Internet of Things (IoT) projects, where I thrive on combining my programming expertise with my love for problem-solving.
